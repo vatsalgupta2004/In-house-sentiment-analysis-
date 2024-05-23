@@ -5,7 +5,7 @@ from nltk.tokenize import word_tokenize, sent_tokenize
 from nltk import FreqDist, classify, NaiveBayesClassifier
 import re, string, random
 from prettytable import PrettyTable
-from sentiment_analyzer.SENTIMENT_ANALYSIS.project_code_logo import logo
+from project_code_logo import logo
 
 def try_again():
     
