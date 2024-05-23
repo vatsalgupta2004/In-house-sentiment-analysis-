@@ -5,8 +5,10 @@ from nltk.tokenize import word_tokenize, sent_tokenize
 from nltk import FreqDist, classify, NaiveBayesClassifier
 import re, string, random
 from prettytable import PrettyTable
+from sentiment_analyzer.SENTIMENT_ANALYSIS.project_code_logo import logo
 
 def try_again():
+    
     global content_try_store
     def remove_noise(tweet_tokens, stop_words = ()):
 
@@ -116,15 +118,6 @@ def try_again():
         print(f"Sentiment Type:--> {classifier.classify(dict([token, True] for token in custom_tokens))}")
         content_try_store.update({user_message:classifier.classify(dict([token, True] for token in custom_tokens))})
 
-logo=''' 
-                       _                                             _                        
-                  _   (_)                  _                        | |                       
-  ___  ____ ____ | |_  _ ____   ____ ____ | |_      ____ ____   ____| |_   _ _____ ____  ____ 
- /___)/ _  )  _ \|  _)| |    \ / _  )  _ \|  _)    / _  |  _ \ / _  | | | | (___  ) _  )/ ___)
-|___ ( (/ /| | | | |__| | | | ( (/ /| | | | |__   ( ( | | | | ( ( | | | |_| |/ __( (/ /| |    
-(___/ \____)_| |_|\___)_|_|_|_|\____)_| |_|\___)   \_||_|_| |_|\_||_|_|\__  (_____)____)_|    
-                                                                      (____/                 
-'''
 print(logo)
 table = PrettyTable(["Sno","sentence","sentiment"])
 content_try_store={}
