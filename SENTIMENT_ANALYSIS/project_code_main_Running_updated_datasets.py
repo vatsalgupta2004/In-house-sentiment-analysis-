@@ -148,10 +148,16 @@ while(condition):
         try_again()
     else:
         condition= False
+        get_sentiment=input("Enter sentiment you want to print information table of (positive,negative,all): ")
         print("\nAll your searches and their results from today are displayed below -->")
         num=1
         for sentence,sentiment in content_try_store.items():
-            table.add_row([num,sentence,sentiment])
+            if((get_sentiment=="positive") and ((sentiment.lower())=="positive")):
+                table.add_row([num,sentence,sentiment])
+            elif((get_sentiment=="negative") and ((sentiment.lower())=="Negative")):
+                table.add_row([num,sentence,sentiment])
+            elif(get_sentiment == "all"):
+                table.add_row([num, sentence, sentiment])
             num+=1
         table.align='l'
         print(table)
