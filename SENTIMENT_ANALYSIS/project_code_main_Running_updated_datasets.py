@@ -118,8 +118,8 @@ def try_again():
 
         random.shuffle(dataset)
 
-        train_data = dataset[:12000]
-        test_data = dataset[12000:]
+        train_data = dataset[:29000]
+        test_data = dataset[29000:]
 
         classifier = NaiveBayesClassifier.train(train_data)
 
