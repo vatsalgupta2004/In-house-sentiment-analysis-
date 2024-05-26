@@ -220,7 +220,7 @@ while(condition):
         end=timeit.default_timer()
         Total_time_found=round(((end-start)/60),2)
         min_total_time=int(Total_time_found)
-        sec_total_time=float(Total_time_found % 1)
+        sec_total_time=(round(float(Total_time_found % 1)*(0.6),2))
         Total_time=(min_total_time + sec_total_time)
         run_timer.append(Total_time)
     else:
