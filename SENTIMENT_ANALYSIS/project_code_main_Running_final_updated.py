@@ -195,6 +195,7 @@ def try_again():
             with open(file="data_collection.txt",mode="a") as data:
                 data.write(f"\n{num_file+1}.{sentence} : {classifier.classify(dict([token, True] for token in custom_tokens))}")
                 # data.write(" ")
+            num_file+=1
             content_try_store.update({sentence:classifier.classify(dict([token, True] for token in custom_tokens))})
 
 # printing the beginning of project logos etc
