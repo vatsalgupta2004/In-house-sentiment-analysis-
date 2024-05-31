@@ -1,6 +1,6 @@
 # download all corpuses
-# import nltk
-# nltk.download("all")
+import nltk
+nltk.download("all")
 
 # importing all required modules and functions 
 import nltk
@@ -11,7 +11,7 @@ from nltk.tokenize import word_tokenize, sent_tokenize
 from nltk import FreqDist, classify, NaiveBayesClassifier
 import re, string, random
 from prettytable import PrettyTable
-from project_code_logo import logo2
+# from project_code_logo import logo2
 import timeit, datetime
 
 # main source-code
@@ -23,7 +23,6 @@ def try_again():
     # removing noise from data
     def remove_noise(data_tokens, stop_words = ()):
         cleansed_tokens = []
-
         for token, tag in pos_tag(data_tokens):
             token = re.sub("(@[A-Za-z0-9_]+|#[A-Za-z0-9_]+|https?://\S+)","", token)
             # @[A-Za-z0-9_] removes @
@@ -221,9 +220,9 @@ def try_again():
         # each dictionary data_dict, a tuple (data_dict, "Positive") is created. This tuple contains the dictionary itself (data_dict) and the label either postive and negative
         positive_dataset = [(data_dict, "Positive") for data_dict in positive_tokens_for_model]
         negative_dataset = [(data_dict, "Negative") for data_dict in negative_tokens_for_model]
-
+        
         # combining both the sentiment_dataset
-        dataset =(positive_dataset + negative_dataset)
+        dataset = (positive_dataset + negative_dataset)
 
         # used random modules shuffle function to jumble the dataset values with same size as initially it was
         random.shuffle(dataset)
@@ -276,6 +275,17 @@ def try_again():
             content_try_store.update({sentence:classifier.classify(dict([token, True] for token in custom_tokens))})
 
 # printing the beginning of project logos etc
+logo2='''
+
+   _____            _   _                      _                           _                    
+  / ____|          | | (_)                    | |        /\               | |                   
+ | (___   ___ _ __ | |_ _ _ __ ___   ___ _ __ | |_      /  \   _ __   __ _| |_   _ _______ _ __ 
+  \___ \ / _ \ '_ \| __| | '_ ` _ \ / _ \ '_ \| __|    / /\ \ | '_ \ / _` | | | | |_  / _ \ '__|
+  ____) |  __/ | | | |_| | | | | | |  __/ | | | |_    / ____ \| | | | (_| | | |_| |/ /  __/ |   
+ |_____/ \___|_| |_|\__|_|_| |_| |_|\___|_| |_|\__|  /_/    \_\_| |_|\__,_|_|\__, /___\___|_|   
+                                                                              __/ |             
+                                                                             |___/              
+'''
 print(logo2)
 # data written into file 
 # with open(file="data_collection.txt",mode="a") as data:
