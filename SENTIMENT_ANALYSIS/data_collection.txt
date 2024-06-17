@@ -1,7 +1,11 @@
 
-2024-05-29 18:40:33.940772
-1. good product must try! --> Positive
-2. bad product they are fraud --> Positive
-3. sad day for all indians fans as they loose the odi world cup 2023 --> Negative
-4. they are illegal traders and are being jailed for 20 years --> Positive
-5. happy birthday --> Positive
+1) hello --> Positive
+Score --> 0.76 
+2) fraud product --> Positive
+Score --> 0.78 
+1) bad --> Negative
+Score --> 0.62 
+1) good --> Positive
+Score --> 0.55 
+2) drugs --> Positive
+Score --> 0.59 
